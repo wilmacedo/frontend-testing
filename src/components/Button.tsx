@@ -7,7 +7,7 @@ interface ButtonProps extends ComponentProps<'button'> {
 export function Button({ label, ...rest }: ButtonProps) {
   return (
     <button
-      className="bg-violet-500 rounded font-semibold text-white h-10 hover:bg-violet-600"
+      className="bg-violet-500 rounded font-semibold text-white h-10 hover:bg-violet-600 disabled:bg-violet-900 disabled:cursor-not-allowed disabled:text-zinc-400"
       {...rest}
     >
       {label}
