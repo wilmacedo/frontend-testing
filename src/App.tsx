@@ -9,7 +9,7 @@ export function App() {
 
         <Input title="Password" type="password" />
 
-        <Button type="submit" />
+        <Button label="Sign in" type="submit" />
       </form>
     </main>
   );
