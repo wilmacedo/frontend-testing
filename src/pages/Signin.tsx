@@ -1,13 +1,13 @@
 import { ChangeEvent, useState } from 'react';
-import { Button } from './components/Button';
-import { Input } from './components/Input';
+import { Button } from '../components/Button';
+import { Input } from '../components/Input';
 
 interface ICredentials {
   email: string;
   password: string;
 }
 
-export function App() {
+export function Signin() {
   const [credentials, setCredentials] = useState({} as ICredentials);
 
   const hasEnable = () => {
@@ -33,9 +33,19 @@ export function App() {
   return (
     <main className="h-screen bg-zinc-50 flex items-center justify-center">
       <form className="flex flex-col gap-4 w-full max-w-xs">
-        <Input title="E-mail" type="email" onChange={handleCredential} />
+        <Input
+          title="E-mail"
+          type="email"
+          placeholder="E-mail"
+          onChange={handleCredential}
+        />
 
-        <Input title="Password" type="password" onChange={handleCredential} />
+        <Input
+          title="Password"
+          type="password"
+          placeholder="Password"
+          onChange={handleCredential}
+        />
 
         <Button label="Sign in" type="submit" disabled={!hasEnable()} />
       </form>

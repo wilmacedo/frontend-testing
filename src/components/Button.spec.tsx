@@ -8,13 +8,11 @@ describe('Input component', () => {
   });
 
   it('should be able to render a button', () => {
-    expect(screen.getByText(/Test/i)).toBeDefined();
+    expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
   it('should be a violet color', () => {
-    expect(screen.getByText(/Test/i).classList.contains('bg-violet-500')).toBe(
-      true,
-    );
+    expect(screen.getByText(/Test/i)).toHaveClass('bg-violet-500');
   });
 
   it('should be able to calls "onClick" prop on button click', () => {
