@@ -8,14 +8,14 @@ describe('Sign in page', () => {
   });
 
   it('should be able to render all components', () => {
-    expect(screen.getByText(/E-mail/i)).toBeDefined();
-    expect(screen.getByPlaceholderText(/E-mail/i)).toBeDefined();
+    expect(screen.getByText(/E-mail/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/E-mail/i)).toBeInTheDocument();
 
-    expect(screen.getByText(/Password/i)).toBeDefined();
-    expect(screen.getByPlaceholderText(/Password/i)).toBeDefined();
+    expect(screen.getByText(/Password/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/Password/i)).toBeInTheDocument();
 
-    expect(screen.getByText(/Sign in/i)).toBeDefined();
-    expect(screen.getByRole('button')).toHaveProperty('disabled', true);
+    expect(screen.getByText(/Sign in/i)).toBeInTheDocument();
+    expect(screen.getByRole('button')).toBeDisabled();
   });
 
   it('should be able to enable button when all inputs are filled', async () => {
@@ -30,7 +30,7 @@ describe('Sign in page', () => {
       },
     });
 
-    expect(screen.getByRole('button')).toHaveProperty('disabled', false);
+    expect(screen.getByRole('button')).toBeEnabled();
   });
 
   it('should not be able to enable button when one of the inputs is empty', async () => {
@@ -40,6 +40,6 @@ describe('Sign in page', () => {
       },
     });
 
-    expect(screen.getByRole('button')).toHaveProperty('disabled', true);
+    expect(screen.getByRole('button')).toBeDisabled();
   });
 });
